@@ -25,6 +25,7 @@ class CategoryItem extends StatelessWidget {
       onTap: () => selectCategory(context),
       child: Container(
         padding: const EdgeInsets.all(5),
+        alignment: Alignment.center,
         child: Text(
           title,
           style: Theme.of(context).textTheme.headline6,
