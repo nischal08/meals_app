@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:meals_app/dummy_data.dart';
 import 'package:meals_app/models/meal.dart';
 import 'package:meals_app/widgets/meal_item.dart';
 
 class CategoryMealsScreen extends StatefulWidget {
   static const routeName = '/category-meals';
+  final List<Meal> availableMeals;
 
+  const CategoryMealsScreen(this.availableMeals);
   @override
   _CategoryMealsScreenState createState() => _CategoryMealsScreenState();
 }
@@ -24,10 +25,12 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
       final categoryId = routeArgs['id'];
       categoryTitle = routeArgs['title'];
       //Filtering the meal recipe which has same category id on DUMMY_MEALS
-      displayMeals = DUMMY_MEALS.where((meal) {
-        return meal.categories.contains(categoryId);
-      }).toList();
-    _loadedInitData = true;
+      displayMeals = widget.availableMeals.where(
+        (meal) {
+          return meal.categories.contains(categoryId);
+        },
+      ).toList();
+      _loadedInitData = true;
     }
 
     super.didChangeDependencies();
