@@ -114,39 +114,57 @@ class MealItem extends StatelessWidget {
                 )
               ],
             ),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Row(
-                    children: [
-                      Icon(Icons.schedule),
-                      SizedBox(
-                        width: 6,
-                      ),
-                      Text('$duration min'),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Icon(Icons.work),
-                      SizedBox(
-                        width: 6,
-                      ),
-                      Text(complexityText),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Icon(Icons.attach_money),
-                      SizedBox(
-                        width: 6,
-                      ),
-                      Text(affordabilityTest),
-                    ],
-                  ),
-                ],
+            Container(
+              decoration: BoxDecoration(
+                color: Theme.of(context).primaryColor,
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(15),
+                  bottomRight: Radius.circular(15),
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Row(
+                      children: [
+                        Icon(Icons.schedule, color: Colors.white),
+                        SizedBox(
+                          width: 6,
+                        ),
+                        Text(
+                          '$duration min',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Icon(Icons.work, color: Colors.white),
+                        SizedBox(
+                          width: 6,
+                        ),
+                        Text(
+                          complexityText,
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Icon(Icons.attach_money, color: Colors.white),
+                        SizedBox(
+                          width: 6,
+                        ),
+                        Text(
+                          affordabilityTest,
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             )
           ],
