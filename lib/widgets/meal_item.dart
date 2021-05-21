@@ -9,7 +9,7 @@ class MealItem extends StatelessWidget {
   final int duration;
   final Complexity complexity;
   final Affordability affordability;
-  final Function removeItem;
+
 
   const MealItem(
       {Key key,
@@ -18,7 +18,6 @@ class MealItem extends StatelessWidget {
       @required this.duration,
       @required this.complexity,
       @required this.affordability,
-      @required this.removeItem,
       @required this.id})
       : super(key: key);
 
@@ -63,7 +62,7 @@ class MealItem extends StatelessWidget {
         .then(
       (result) {
         if (result != null) {
-          removeItem(result);
+          // removeItem(result);
         }
       }, //result is from pop in meal_detail_screen
     );
